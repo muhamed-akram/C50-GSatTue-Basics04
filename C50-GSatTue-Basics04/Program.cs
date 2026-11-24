@@ -89,6 +89,16 @@ namespace C50_GSatTue_Basics04
 
         }
         #endregion
+        #region Question 10
+        //Write a method PrintBookInfo(string title, int pages = 300)
+        //where pages is optional. Call 
+        //it once with only a title, and once passing both a title and pages.
+
+        public static void PrintBookInfo(string title, int pages = 300)
+        {
+            Console.WriteLine($"Title is : {title}\nPages are : { pages}");
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -143,6 +153,9 @@ namespace C50_GSatTue_Basics04
             double price;//Q9
             TryGetPrice("Clean Code" ,out price);//Q9
             Console.WriteLine(price);//Q9
+
+            PrintBookInfo("How to Program");//Q10
+            PrintBookInfo("java for Beginners", 500);
 
         }
     }
