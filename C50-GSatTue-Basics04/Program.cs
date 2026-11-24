@@ -69,6 +69,26 @@ namespace C50_GSatTue_Basics04
             prices = new double[] { 10.0, 12.5, 15.0 };
         }
         #endregion
+        #region Question 9
+        //Write a method bool TryGetPrice(string title, out double price)
+        //that returns true and sets 
+        //price to 25.5 if title is "Clean Code",
+        //otherwise returns false and sets price to 0.Call it
+        public static bool TryGetPrice(string title, out double price)
+        {
+            if(title == "Clean Code")
+            {
+                price = 25.5;
+                return true;
+            }
+            else
+            {
+                price = 0;
+                return false;
+            }
+
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -119,6 +139,10 @@ namespace C50_GSatTue_Basics04
 
             ReplaceArray(ref prices);//Q8, prices length in line 110 was 2
             Console.WriteLine($"prices length: {prices.Length}");//here is 3
+
+            double price;//Q9
+            TryGetPrice("Clean Code" ,out price);//Q9
+            Console.WriteLine(price);//Q9
 
         }
     }
