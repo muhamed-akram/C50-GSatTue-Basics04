@@ -34,6 +34,17 @@ namespace C50_GSatTue_Basics04
             Console.WriteLine($"pages inside method:{pages}");
         }
         #endregion
+        #region Question 6
+        //Write a method ApplyDiscount(double[] prices) t
+        //hat subtracts 5 from prices[0]. Call it 
+        //with double[] prices = { 25.5, 40.0 };
+        //and print prices[0] afterward.What do you expect to
+        //see, and why?
+         public static void ApplyDiscount(double[] prices)
+        {
+            prices[0] -= 5;
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -72,6 +83,10 @@ namespace C50_GSatTue_Basics04
             AddBonusPages(pages);//here pages are copy so any change not affect on origrinal value
             Console.WriteLine($"after method: {pages}");//400
 
+            double[] prices = { 25.5, 40.0 };//Q6
+            ApplyDiscount(prices);//prices[0] will decrease as array is refrence
+                                  //type and passed by refrence not copy 
+            Console.WriteLine($"price after discount: {prices[0]}");
         }
     }
 }
