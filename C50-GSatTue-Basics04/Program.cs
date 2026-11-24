@@ -13,6 +13,16 @@ namespace C50_GSatTue_Basics04
         }
 
         #endregion
+        #region Question 4
+        //Write a method PrintBookTitle(string title) that prints
+        //"Book title: " + title. Call it with 
+        //"Clean Code".
+
+        public static void PrintBookTitle(string title)
+        {
+            Console.WriteLine($"Book Title is : {title}");
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Question 1
@@ -44,6 +54,7 @@ namespace C50_GSatTue_Basics04
             #endregion
 
             PrintWelcomeMessage();
+            PrintBookTitle("Clean Code");
         }
     }
 }
