@@ -4,6 +4,15 @@ namespace C50_GSatTue_Basics04
 {
     internal class Program
     {
+        #region Question 3
+         //Write a method called PrintWelcomeMessage that takes no parameters and prints 
+        //"Welcome to the Library!". Call it from Main.
+        public static void PrintWelcomeMessage()
+        {
+            Console.WriteLine("Welcom to the Library");
+        }
+
+        #endregion
         static void Main(string[] args)
         {
             #region Question 1
@@ -33,6 +42,8 @@ namespace C50_GSatTue_Basics04
             //    }
             //}
             #endregion
+
+            PrintWelcomeMessage();
         }
     }
 }
