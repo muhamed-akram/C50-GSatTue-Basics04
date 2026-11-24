@@ -45,6 +45,17 @@ namespace C50_GSatTue_Basics04
             prices[0] -= 5;
         }
         #endregion
+        #region Question 7
+        //Rewrite the method from question 5 as
+        //AddBonusPagesByRef(ref int pages) using ref. 
+       // Call it and print pages afterward.How is the result different from question 5?
+        
+        public static void AddBonusPagesByRef(ref int pages)
+        {
+            pages += 50;
+            Console.WriteLine($"Pages inside method: {pages}");
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -87,6 +98,12 @@ namespace C50_GSatTue_Basics04
             ApplyDiscount(prices);//prices[0] will decrease as array is refrence
                                   //type and passed by refrence not copy 
             Console.WriteLine($"price after discount: {prices[0]}");
+
+            int pages2 = 400;
+            AddBonusPagesByRef(ref pages2);//passing by ref here make change
+                                           //in original variable
+            Console.WriteLine($"pages after passing by ref : {pages2}");//450
+
         }
     }
 }
