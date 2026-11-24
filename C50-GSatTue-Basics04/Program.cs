@@ -23,6 +23,18 @@ namespace C50_GSatTue_Basics04
             Console.WriteLine($"Book Title is : {title}");
         }
         #endregion
+        #region Question 5
+        //Write a method AddBonusPages(int pages) that adds 50 to pages.
+        //Call it with a variable 
+        //int pages = 400; and print pages afterward.What do you expect to see, and why?
+        
+        public static void AddBonusPages(int pages)
+        {
+            pages += 50;
+            Console.WriteLine($"pages inside method:{pages}");
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             #region Question 1
@@ -53,8 +65,13 @@ namespace C50_GSatTue_Basics04
             //}
             #endregion
 
-            PrintWelcomeMessage();
-            PrintBookTitle("Clean Code");
+            PrintWelcomeMessage();//Q3
+            PrintBookTitle("Clean Code");//Q4
+
+            int pages = 400;//pages here will never change as it was passed by value
+            AddBonusPages(pages);//here pages are copy so any change not affect on origrinal value
+            Console.WriteLine($"after method: {pages}");//400
+
         }
     }
 }
