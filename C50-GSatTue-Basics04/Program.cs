@@ -99,6 +99,17 @@ namespace C50_GSatTue_Basics04
             Console.WriteLine($"Title is : {title}\nPages are : { pages}");
         }
         #endregion
+        #region Question 12
+        //Write a method PrintAllTitles(params string[] titles)
+        //that prints each title on its own line. 
+        //Call it with three book titles.
+         public static void PrintAllTitles(params string[] titles)
+        {
+            for(int i = 0; i < titles.Length; i++)
+                Console.WriteLine($"Title : {titles[i]}\n");
+    
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -156,12 +167,16 @@ namespace C50_GSatTue_Basics04
 
             PrintBookInfo("How to Program");//Q10
             PrintBookInfo("java for Beginners", 500);
+
             #region Question 11
             /*Using the PrintBookInfo method from the question above, 
              * call it by naming the 
              parameters, passing pages before title.*/
             PrintBookInfo(pages: 1024, title: "OS Concepts");//Q11
             #endregion
+
+            PrintAllTitles("Design Pattern", "System architcture", "Solid Principles");
+
         }
     }
 }
