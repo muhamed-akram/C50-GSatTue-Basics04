@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace C50_GSatTue_Basics04
 {
@@ -56,6 +57,18 @@ namespace C50_GSatTue_Basics04
             Console.WriteLine($"Pages inside method: {pages}");
         }
         #endregion
+        #region Question 8
+        //Write a method ReplaceArray(ref double[] prices)
+        //that replaces prices entirely with a 
+       // new array { 10.0, 12.5, 15.0 }.
+       // Call it with your prices array and print prices.Length
+       //afterward.
+
+        public static void ReplaceArray(ref double[] prices)
+        {
+            prices = new double[] { 10.0, 12.5, 15.0 };
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -96,13 +109,16 @@ namespace C50_GSatTue_Basics04
 
             double[] prices = { 25.5, 40.0 };//Q6
             ApplyDiscount(prices);//prices[0] will decrease as array is refrence
-                                  //type and passed by refrence not copy 
+                                  //type and passed a copy of it's refrence. 
             Console.WriteLine($"price after discount: {prices[0]}");
 
             int pages2 = 400;
             AddBonusPagesByRef(ref pages2);//passing by ref here make change
                                            //in original variable
             Console.WriteLine($"pages after passing by ref : {pages2}");//450
+
+            ReplaceArray(ref prices);//Q8, prices length in line 110 was 2
+            Console.WriteLine($"prices length: {prices.Length}");//here is 3
 
         }
     }
